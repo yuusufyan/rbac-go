@@ -1,0 +1,36 @@
+version: '3'
+
+vars:
+  APP_NAME: rbac-go
+
+tasks:
+
+  run:
+    desc: Run application
+    cmds:
+      - go run ./cmd/main.go
+
+  build:
+    desc: Build binary
+    cmds:
+      - go build -o bin/{{.APP_NAME}}.exe ./cmd/main.go
+
+  test:
+    desc: Run tests
+    cmds:
+      - go test ./...
+
+  clean:
+    desc: Clean build artifacts
+    cmds:
+      - powershell -Command "if (Test-Path bin) { Remove-Item -Recurse -Force bin }"
+
+  lint:
+    desc: Run go vet
+    cmds:
+      - go vet ./...
+
+  tidy:
+    desc: Tidy modules
+    cmds:
+      - go mod tidy
