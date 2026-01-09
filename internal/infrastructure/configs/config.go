@@ -1,4 +1,4 @@
-package infrastructure
+package configs
 
 import (
 	"fmt"
@@ -36,6 +36,9 @@ type Config struct {
 var AppConfig *Config
 
 func LoadConfig() {
+	if AppConfig != nil {
+		return
+	}
 	utils.NewLogger().Info("Loading config")
 
 	AppConfig = &Config{
