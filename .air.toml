@@ -1,0 +1,11 @@
+root = "."
+tmp_dir = "tmp"
+
+[build]
+cmd = "go build -o tmp/rbac-go.exe ./cmd/main.go"
+bin = "tmp/rbac-go.exe"
+delay = 1000
+exclude_dir = ["tmp", "bin", "vendor"]
+
+[log]
+time = true
