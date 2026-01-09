@@ -10,6 +10,11 @@ tasks:
     cmds:
       - go run ./cmd/main.go
 
+  dev:
+    desc: Run app with live reload (air)
+    cmds:
+      - air
+
   build:
     desc: Build binary
     cmds:
