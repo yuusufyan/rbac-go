@@ -23,12 +23,6 @@ func (l *Logger) Error(message string, err error, fatal bool) {
 		err,
 	)
 
-	l.base.Printf("[ERROR] [%s] %s : %v",
-		time.Now().Format("2006-01-02 15:04:05"),
-		message,
-		err,
-	)
-
 	if fatal {
 		l.base.Fatalf("[FATAL] [%s] %s : %v",
 			time.Now().Format("2006-01-02 15:04:05"),
