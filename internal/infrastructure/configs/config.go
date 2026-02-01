@@ -31,6 +31,7 @@ type Config struct {
 	UserService string
 	AppSecret   string
 	VerifyTls   bool
+	Verify      bool
 }
 
 var AppConfig *Config
